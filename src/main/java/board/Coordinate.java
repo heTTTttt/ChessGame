@@ -23,18 +23,46 @@ public enum Coordinate {
     H5(4,8), H6(3,8), H7(2,8),H8(1, 8);
 
     @FXML
-    private Rectangle square;
+    private final Rectangle square;
+    private final int coordinateX;
+    private final int coordinateY;
 
-    Coordinate(int coordinateX, int coordinateY) {
-
+    Coordinate(int coordinateY, int coordinateX) {
+        this.square = null;
+        this.coordinateX = coordinateX;
+        this.coordinateY = coordinateY;
     }
 
     public Rectangle getSquare() {
         return square;
     }
 
+    public int getCoordinateX() {
+        return coordinateX;
+    }
+
+    public int getCoordinateY() {
+        return coordinateY;
+    }
+
+    //TODO: оптимізувати метод для виявлення усіх можливих координат.
+    public static Coordinate getCoordinate(int x, int y) {
+        System.out.println(y + " " + x);
+        if (x == 8 && y ==6) {
+            return H3;
+        }
+        if (x == 8 && y == 1){
+            return H8;
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
-        return "square = " + square;
+        return "Coordinate{" +
+                "square=" + square +
+                ", coordinateX=" + coordinateX +
+                ", coordinateY=" + coordinateY +
+                '}';
     }
 }

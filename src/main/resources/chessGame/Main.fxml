@@ -14,7 +14,7 @@
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="300.0" layoutY="300.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="200.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="100.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
-   <Rectangle fx:id="squareH1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="700.0" layoutY="700.0" onMouseClicked="#mouseClick" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+   <Rectangle fx:id="squareH1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="700.0" layoutY="700.0" onMouseClicked="#mouseClickSquare" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="200.0" layoutY="300.0" stroke="BLACK" strokeType="INSIDE" width="100.0">
       <rotationAxis>
@@ -33,7 +33,7 @@
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="500.0" layoutY="400.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="400.0" layoutY="300.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="300.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
-   <Rectangle fx:id="squareH2" arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="700.0" layoutY="600.0" onMouseClicked="#mouseClick" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+   <Rectangle fx:id="squareH2" arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="700.0" layoutY="600.0" onMouseClicked="#mouseClickSquare" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="600.0" layoutY="300.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="500.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="500.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
@@ -43,9 +43,9 @@
          <Point3D />
       </rotationAxis>
    </Rectangle>
-   <Rectangle fx:id="squareH6" arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="700.0" layoutY="200.0" onMouseClicked="#mouseClick" stroke="BLACK" strokeType="INSIDE" width="100.0" />
-   <Rectangle fx:id="squareH4" arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="700.0" layoutY="400.0" onMouseClicked="#mouseClick" stroke="BLACK" strokeType="INSIDE" width="100.0" />
-   <Rectangle fx:id="squareH8" arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="700.0" onMouseClicked="#mouseClick" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+   <Rectangle fx:id="squareH6" arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="700.0" layoutY="200.0" onMouseClicked="#mouseClickSquare" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+   <Rectangle fx:id="squareH4" arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="700.0" layoutY="400.0" onMouseClicked="#mouseClickSquare" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+   <Rectangle fx:id="squareH8" arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="700.0" onMouseClicked="#mouseClickSquare" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="600.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="200.0" layoutY="700.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="400.0" layoutY="700.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
@@ -70,11 +70,11 @@
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="400.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="300.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="200.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
-   <Rectangle fx:id="squareH3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="700.0" layoutY="500.0" onMouseClicked="#mouseClick" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+   <Rectangle fx:id="squareH3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="700.0" layoutY="500.0" onMouseClicked="#mouseClickSquare" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="600.0" layoutY="400.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle fx:id="squareH7" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="700.0" layoutY="100.0" onMouseClicked="#mouseClickH7" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="600.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
-   <Rectangle fx:id="squareH5" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="700.0" layoutY="300.0" onMouseClicked="#mouseClick" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+   <Rectangle fx:id="squareH5" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="700.0" layoutY="300.0" onMouseClicked="#mouseClickSquare" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="600.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="500.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="400.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
@@ -115,7 +115,7 @@
          <Image url="@../chessPiecesImages/White-Pawn-Modern.png" />
       </image>
    </ImageView>
-   <ImageView fx:id="pawnH" fitHeight="90.0" fitWidth="60.0" layoutX="720.0" layoutY="605.0">
+   <ImageView fx:id="pawnH" fitHeight="90.0" fitWidth="60.0" layoutX="720.0" layoutY="605.0" onMouseClicked="#mouseClickPawn" onMouseDragged="#onMouseDragReleased">
       <image>
          <Image url="@../chessPiecesImages/White-Pawn-Modern.png" />
       </image>
