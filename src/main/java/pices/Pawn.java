@@ -1,16 +1,21 @@
 package pices;
 
 import board.Coordinate;
-import chessGame.Controller;
+import chessGame.ChessController;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pawn extends Controller implements Piece {
+import static pices.ColorType.BLACK;
+import static pices.ColorType.WHITE;
 
-    private static Pieces type = Pieces.PAWN;
+public class Pawn implements Piece {
+
+    private final static Pieces type = Pieces.PAWN;
     private final ColorType colorType;
-    private Coordinate coordinate;
+    private final Coordinate coordinate;
+    // використати цей прапорець для виявлення стартової позиції.
+    private final boolean startPosition = true;
 
     public Pawn(ColorType colorType, Coordinate coordinate) {
         this.colorType = colorType;
@@ -20,16 +25,36 @@ public class Pawn extends Controller implements Piece {
     //TODO: реализовать ход пешек только вперёд.
     //TODO: РЕАЛИЗОВАТЬ что пешка со старта могла ходить на два поля вперёд.
     //TODO: если перед пешкой стоит фигура - то она не ходит вперёд.
+
+    // метод повертає список можливих ходів.
     public List<Coordinate> getListOfPossibleMoves() {
         List<Coordinate> possibleMoves = new ArrayList<>();
-        int x = coordinate.getCoordinateX();
-        int y = coordinate.getCoordinateY() - 1;
-        Coordinate possibleMove = Coordinate.getCoordinate(x, y);
+        int coordinateX = coordinate.getCoordinateX();
+        int coordinateY = coordinate.getCoordinateY(); // -1
+        if (BLACK.isColorTypeBlack()) {
+            if (startPosition){
+                coordinateY += 2;
+                if (!startPosition){
+                    coordinateY += 1;
+                }
+            }
+        }else if (WHITE.isColorTypeWhite()) {
+            if (startPosition) {
+                coordinateY -= 2;
+                if (!startPosition) {
+                    coordinateY -= 1;
+                }
+            }
+        }
+
+        Coordinate possibleMove = coordinate.getCoordinate(coordinateX, coordinateY);
         possibleMoves.add(possibleMove);
         return possibleMoves;
     }
 
     //TODO: реализовать передвижение(обновлялись координаты при каждом ходе).
+
+    // метод дозволяє пішаку ходити.
     @Override
     public void move(Coordinate coordinate) {
 

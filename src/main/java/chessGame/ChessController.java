@@ -1,9 +1,7 @@
 package chessGame;
 
 import board.Coordinate;
-import com.almasb.fxgl.dsl.components.DraggableComponent;
 import javafx.fxml.FXML;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
@@ -11,7 +9,7 @@ import pices.DraggableMarker;
 import pices.Pieces;
 
 
-public class Controller {
+public class ChessController {
 
  @FXML
  Rectangle squareH8 = Coordinate.H8.getSquare();
@@ -29,19 +27,15 @@ public class Controller {
  Rectangle squareH2 = Coordinate.H2.getSquare();
  @FXML
  Rectangle squareH1 = Coordinate.H1.getSquare();
-
  @FXML
- ImageView pawnH;
-
-// DraggableComponent draggableComponent = new DraggableComponent();
-
+ ImageView whitePawnH;
  DraggableMarker draggableMarker = new DraggableMarker();
 
  @FXML
  public void mouseClickPawn(MouseEvent actionEvent) {
   System.out.println("It`s a piece "+ Pieces.PAWN.getPiece() + " " + actionEvent.getX() + " " + actionEvent.getY());
 //  System.out.println(squareH8);
-  System.out.println("Scene coordinate " + pawnH.yProperty() + " " + pawnH.xProperty());
+  System.out.println("Scene coordinate " + whitePawnH.yProperty() + " " + whitePawnH.xProperty());
  }
 
  @FXML
@@ -55,7 +49,7 @@ public class Controller {
  }
  @FXML
  public void onMouseDragReleased() {
-  draggableMarker.makeDraggable(pawnH);
+  draggableMarker.makeDraggable(whitePawnH);
   System.out.println("U drag the pawn");
  }
 }
