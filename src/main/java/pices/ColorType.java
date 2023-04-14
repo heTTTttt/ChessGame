@@ -1,20 +1,14 @@
 package pices;
 
 public enum ColorType {
-    BLACK(true, false), WHITE(false, true);
+    BLACK, WHITE;
 
-    private final boolean colorTypeBlack;
-    private final boolean colorTypeWhite;
-    ColorType(boolean colorTypeBlack, boolean colorTypeWhite) {
-        this.colorTypeBlack = colorTypeBlack;
-        this.colorTypeWhite = colorTypeWhite;
+    public static boolean isBlack(ColorType colorType) {
+
+        return BLACK.equals(colorType);
     }
+    public static boolean isWhite(ColorType colorType) {
+        return WHITE.equals(colorType);
 
-    public boolean isColorTypeBlack() {
-        return colorTypeBlack;
-    }
-
-    public boolean isColorTypeWhite() {
-        return colorTypeWhite;
     }
 }

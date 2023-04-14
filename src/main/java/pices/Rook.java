@@ -22,16 +22,22 @@ public class Rook implements Piece{
         return coordinate;
     }
 
+
     public ColorType getColorType() {
         return colorType;
     }
 
     //TODO: реалізувати метод виявлення можливих ходів для тури.
-    public List<Coordinate> getListOfPossibleMoves() {
-        List<Coordinate> possibleMoves = new ArrayList<>();
+    public List<Integer> getListOfPossibleMoves() {
+        List<Integer> possibleMoves = new ArrayList<>();
         int coordinateY = coordinate.getCoordinateY();
         int coordinateX = coordinate.getCoordinateX();
-
+        for (int i = 1; i <= 8; i++) {
+            coordinateY--;
+            coordinateX--;
+//            int possibleMove = coordinate.getCoordinate(coordinateY, coordinateX);
+//            possibleMoves.add(possibleMove);
+        }
         return possibleMoves;
     }
     @Override

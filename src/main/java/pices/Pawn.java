@@ -1,21 +1,16 @@
 package pices;
 
 import board.Coordinate;
-import chessGame.ChessController;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static pices.ColorType.BLACK;
-import static pices.ColorType.WHITE;
 
 public class Pawn implements Piece {
 
     private final static Pieces type = Pieces.PAWN;
     private final ColorType colorType;
-    private final Coordinate coordinate;
-    // використати цей прапорець для виявлення стартової позиції.
-    private final boolean startPosition = true;
+    private Coordinate coordinate;
+    boolean startPosition = true;     // використати цей прапорець для виявлення стартової позиції.
 
     public Pawn(ColorType colorType, Coordinate coordinate) {
         this.colorType = colorType;
@@ -30,25 +25,24 @@ public class Pawn implements Piece {
     public List<Coordinate> getListOfPossibleMoves() {
         List<Coordinate> possibleMoves = new ArrayList<>();
         int coordinateX = coordinate.getCoordinateX();
-        int coordinateY = coordinate.getCoordinateY(); // -1
-        if (BLACK.isColorTypeBlack()) {
-            if (startPosition){
-                coordinateY += 2;
-                if (!startPosition){
-                    coordinateY += 1;
-                }
-            }
-        }else if (WHITE.isColorTypeWhite()) {
+        int coordinateY = coordinate.getCoordinateY();
+
+        if (ColorType.isBlack(colorType)) {
             if (startPosition) {
-                coordinateY -= 2;
-                if (!startPosition) {
-                    coordinateY -= 1;
-                }
+                possibleMoves.add(Coordinate.getCoordinate(coordinateY, this.coordinate.getCoordinateX() - 2));
+                possibleMoves.add(Coordinate.getCoordinate(coordinateY, coordinateX));
+            } else {
+                possibleMoves.add(Coordinate.getCoordinate(coordinateY, coordinateX));
             }
         }
-
-        Coordinate possibleMove = coordinate.getCoordinate(coordinateX, coordinateY);
-        possibleMoves.add(possibleMove);
+        if (ColorType.isWhite(colorType)) {
+            if (startPosition) {
+                possibleMoves.add(Coordinate.getCoordinate(coordinateY, this.coordinate.getCoordinateX() + 2));
+                possibleMoves.add(Coordinate.getCoordinate(coordinateY, coordinateX));
+            } else {
+                possibleMoves.add(Coordinate.getCoordinate(coordinateY, coordinateX));
+            }
+        }
         return possibleMoves;
     }
 
@@ -57,7 +51,13 @@ public class Pawn implements Piece {
     // метод дозволяє пішаку ходити.
     @Override
     public void move(Coordinate coordinate) {
-
+        List<Coordinate> possibleMoves = getListOfPossibleMoves();
+        if (possibleMoves.contains(coordinate)) {
+            this.coordinate = coordinate;
+            startPosition = false;             // використати цей прапорець для виявлення стартової позиції.
+        } else {
+            System.out.println("Impossible");
+        }
     }
 
     @Override
