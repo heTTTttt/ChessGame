@@ -10,7 +10,7 @@ public class Pawn implements Piece {
     private final static Pieces type = Pieces.PAWN;
     private final ColorType colorType;
     private Coordinate coordinate;
-    boolean startPosition = true;     // використати цей прапорець для виявлення стартової позиції.
+    private boolean startPosition = true;     // використати цей прапорець для виявлення стартової позиції.
 
     public Pawn(ColorType colorType, Coordinate coordinate) {
         this.colorType = colorType;
@@ -24,23 +24,21 @@ public class Pawn implements Piece {
     // метод повертає список можливих ходів.
     public List<Coordinate> getListOfPossibleMoves() {
         List<Coordinate> possibleMoves = new ArrayList<>();
-        int coordinateX = coordinate.getCoordinateX();
-        int coordinateY = coordinate.getCoordinateY();
 
         if (ColorType.isBlack(colorType)) {
             if (startPosition) {
-                possibleMoves.add(Coordinate.getCoordinate(coordinateY, this.coordinate.getCoordinateX() - 2));
-                possibleMoves.add(Coordinate.getCoordinate(coordinateY, coordinateX));
+                possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY(), this.coordinate.getCoordinateX() - 2));
+                possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY(), this.coordinate.getCoordinateX() - 1));
             } else {
-                possibleMoves.add(Coordinate.getCoordinate(coordinateY, coordinateX));
+                possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY(), this.coordinate.getCoordinateX() - 1));
             }
         }
         if (ColorType.isWhite(colorType)) {
             if (startPosition) {
-                possibleMoves.add(Coordinate.getCoordinate(coordinateY, this.coordinate.getCoordinateX() + 2));
-                possibleMoves.add(Coordinate.getCoordinate(coordinateY, coordinateX));
+                possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY(), this.coordinate.getCoordinateX() + 2));
+                possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY(), this.coordinate.getCoordinateX() + 1));
             } else {
-                possibleMoves.add(Coordinate.getCoordinate(coordinateY, coordinateX));
+                possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY(), this.coordinate.getCoordinateX() + 1));
             }
         }
         return possibleMoves;
