@@ -10,8 +10,9 @@ public class Rook implements Piece{
     //TODO: реализовать ладью.
 
     private final static Pieces pieceType = Pieces.ROOK;
-    private final Coordinate coordinate;
+    private Coordinate coordinate;
     private final ColorType colorType;
+    private boolean startPosition = true;
 
     public Rook(Coordinate coordinate, ColorType colorType) {
         this.coordinate = coordinate;
@@ -42,7 +43,13 @@ public class Rook implements Piece{
     }
     @Override
     public void move(Coordinate coordinate) {
-
+        List<Coordinate> possibleMoves = new ArrayList<>();
+        if (possibleMoves.contains(coordinate)) {
+            this.coordinate = coordinate;
+            startPosition = false;
+        } else {
+            System.out.println("Impossible");
+        }
     }
 
     @Override
