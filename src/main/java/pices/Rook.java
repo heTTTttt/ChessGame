@@ -29,21 +29,16 @@ public class Rook implements Piece{
     }
 
     //TODO: реалізувати метод виявлення можливих ходів для тури.
-    public List<Integer> getListOfPossibleMoves() {
-        List<Integer> possibleMoves = new ArrayList<>();
-        int coordinateY = coordinate.getCoordinateY();
-        int coordinateX = coordinate.getCoordinateX();
-        for (int i = 1; i <= 8; i++) {
-            coordinateY--;
-            coordinateX--;
-//            int possibleMove = coordinate.getCoordinate(coordinateY, coordinateX);
-//            possibleMoves.add(possibleMove);
+    public List<Coordinate> getListOfPossibleMoves() {
+        List<Coordinate> possibleMoves = new ArrayList<>();
+        if (coordinate.getCoordinateX() == this.coordinate.getCoordinateX()) {
+
         }
         return possibleMoves;
     }
     @Override
     public void move(Coordinate coordinate) {
-        List<Coordinate> possibleMoves = new ArrayList<>();
+        List<Coordinate> possibleMoves = getListOfPossibleMoves();
         if (possibleMoves.contains(coordinate)) {
             this.coordinate = coordinate;
             startPosition = false;
