@@ -28,16 +28,14 @@ public class Pawn implements Piece {
         if (ColorType.isBlack(colorType) && coordinate.isOutOfBounds()) {
             if (startPosition) {
                 possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY(), this.coordinate.getCoordinateX() - 2));
-            } else {
-                possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY(), this.coordinate.getCoordinateX() - 1));
             }
+                possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY(), this.coordinate.getCoordinateX() - 1));
         }
         if (ColorType.isWhite(colorType) && coordinate.isOutOfBounds()) {
             if (startPosition) {
                 possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY(), this.coordinate.getCoordinateX() + 2));
-            } else {
-                possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY(), this.coordinate.getCoordinateX() + 1));
             }
+                possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY(), this.coordinate.getCoordinateX() + 1));
         }
         return possibleMoves;
     }
@@ -46,14 +44,14 @@ public class Pawn implements Piece {
 
     // метод дозволяє пішаку ходити.
     @Override
-    public void move(Coordinate coordinate) {
+    public void move(Coordinate coordinate) throws ImpossibleMoveException {
         List<Coordinate> possibleMoves = getListOfPossibleMoves();
-        if (possibleMoves.contains(coordinate)) {
-            this.coordinate = coordinate;
-            startPosition = false;             // використати цей прапорець для виявлення стартової позиції.
-        } else {
-            System.out.println("Impossible");
-        }
+            if (possibleMoves.contains(coordinate)) {
+                this.coordinate = coordinate;
+                startPosition = false;             // використати цей прапорець для виявлення стартової позиції.
+            } else {
+                throw new ImpossibleMoveException("Impossible move");
+            }
     }
 
     @Override
