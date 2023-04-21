@@ -5,7 +5,7 @@ import board.Coordinate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Rook implements Piece{
+public class Rook implements Piece {
 
     //TODO: реализовать ладью.
 
@@ -29,21 +29,37 @@ public class Rook implements Piece{
     }
 
     //TODO: реалізувати метод виявлення можливих ходів для тури.
-    public List<Coordinate> getListOfPossibleMoves() {
+    public List<Coordinate> getListOfPossibleMoves() throws ImpossibleMoveException{
         List<Coordinate> possibleMoves = new ArrayList<>();
         if (coordinate.getCoordinateX() == this.coordinate.getCoordinateX()) {
-            possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY() + 1, this.coordinate.getCoordinateX()));
+            for (int i = 1; i <= 8; i++) {
+                if (coordinate.isOutOfBounds()) {
+                    possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY() + i, this.coordinate.getCoordinateX()));
+                }
+            }
+        } else {
+            throw new ImpossibleMoveException("Impossible move");
         }
+        if (coordinate.getCoordinateY() == this.coordinate.getCoordinateY()) {
+            for (int i = 1; i <= 8; i++) {
+                if (coordinate.isOutOfBounds()) {
+                    possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY() + i, this.coordinate.getCoordinateX()));
+                }
+            }
+        } else {
+            throw new ImpossibleMoveException("Impossible move");
+        }
+
         return possibleMoves;
     }
     @Override
-    public void move(Coordinate coordinate) {
+    public void move(Coordinate coordinate) throws ImpossibleMoveException {
         List<Coordinate> possibleMoves = getListOfPossibleMoves();
         if (possibleMoves.contains(coordinate)) {
             this.coordinate = coordinate;
             startPosition = false;
         } else {
-            System.out.println("Impossible");
+            throw new ImpossibleMoveException("Impossible move");
         }
     }
 
