@@ -32,7 +32,7 @@ public class Rook implements Piece{
     public List<Coordinate> getListOfPossibleMoves() {
         List<Coordinate> possibleMoves = new ArrayList<>();
         if (coordinate.getCoordinateX() == this.coordinate.getCoordinateX()) {
-
+            possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY() + 1, this.coordinate.getCoordinateX()));
         }
         return possibleMoves;
     }
