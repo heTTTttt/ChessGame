@@ -25,18 +25,16 @@ public class Pawn implements Piece {
     public List<Coordinate> getListOfPossibleMoves() {
         List<Coordinate> possibleMoves = new ArrayList<>();
 
-        if (ColorType.isBlack(colorType)) {
+        if (ColorType.isBlack(colorType) && coordinate.isOutOfBounds()) {
             if (startPosition) {
                 possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY(), this.coordinate.getCoordinateX() - 2));
-                possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY(), this.coordinate.getCoordinateX() - 1));
             } else {
                 possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY(), this.coordinate.getCoordinateX() - 1));
             }
         }
-        if (ColorType.isWhite(colorType)) {
+        if (ColorType.isWhite(colorType) && coordinate.isOutOfBounds()) {
             if (startPosition) {
                 possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY(), this.coordinate.getCoordinateX() + 2));
-                possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY(), this.coordinate.getCoordinateX() + 1));
             } else {
                 possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY(), this.coordinate.getCoordinateX() + 1));
             }
