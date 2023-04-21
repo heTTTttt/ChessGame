@@ -56,6 +56,10 @@ public enum Coordinate {
         return coordinateX;
     }
 
+    public boolean isOutOfBounds() {
+        return getCoordinateX() >= 1 && getCoordinateX() <= 8 && getCoordinateY() >= 1 && getCoordinateY() <= 8;
+    }
+
 
     //TODO: оптимізувати метод для виявлення усіх можливих координат.
 
