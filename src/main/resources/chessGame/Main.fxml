@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Point3D?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chessGame.ChessController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chessGame.ChessController">
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="600.0" layoutY="600.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="400.0" layoutY="400.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
@@ -12,7 +14,7 @@
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="300.0" layoutY="300.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="200.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="100.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
-   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="700.0" layoutY="700.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+   <Rectangle fx:id="squareH1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="700.0" layoutY="700.0" onMouseClicked="#mouseClickSquare" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="200.0" layoutY="300.0" stroke="BLACK" strokeType="INSIDE" width="100.0">
       <rotationAxis>
@@ -31,7 +33,7 @@
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="500.0" layoutY="400.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="400.0" layoutY="300.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="300.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
-   <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="700.0" layoutY="600.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+   <Rectangle fx:id="squareH2" arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="700.0" layoutY="600.0" onMouseClicked="#mouseClickSquare" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="600.0" layoutY="300.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="500.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="500.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
@@ -41,9 +43,9 @@
          <Point3D />
       </rotationAxis>
    </Rectangle>
-   <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="700.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
-   <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="700.0" layoutY="400.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
-   <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="700.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+   <Rectangle fx:id="squareH6" arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="700.0" layoutY="200.0" onMouseClicked="#mouseClickSquare" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+   <Rectangle fx:id="squareH4" arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="700.0" layoutY="400.0" onMouseClicked="#mouseClickSquare" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+   <Rectangle fx:id="squareH8" arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="700.0" onMouseClicked="#mouseClickSquare" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="600.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="200.0" layoutY="700.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="400.0" layoutY="700.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
@@ -68,13 +70,94 @@
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="400.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="300.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="200.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
-   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="700.0" layoutY="500.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+   <Rectangle fx:id="squareH3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="700.0" layoutY="500.0" onMouseClicked="#mouseClickSquare" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="600.0" layoutY="400.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
-   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="700.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+   <Rectangle fx:id="squareH7" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="700.0" layoutY="100.0" onMouseClicked="#mouseClickH7" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="600.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
-   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="700.0" layoutY="300.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+   <Rectangle fx:id="squareH5" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="700.0" layoutY="300.0" onMouseClicked="#mouseClickSquare" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="600.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="500.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="400.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="300.0" layoutY="500.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+   <AnchorPane layoutX="312.0" layoutY="234.0" />
+   <ImageView fx:id="pawnG" fitHeight="90.0" fitWidth="60.0" layoutX="620.0" layoutY="605.0">
+      <image>
+         <Image url="@../chessPiecesImages/White-Pawn-Modern.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="pawnA" fitHeight="90.0" fitWidth="60.0" layoutX="20.0" layoutY="605.0">
+      <image>
+         <Image url="@../chessPiecesImages/White-Pawn-Modern.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="pawnB" fitHeight="90.0" fitWidth="60.0" layoutX="120.0" layoutY="605.0">
+      <image>
+         <Image url="@../chessPiecesImages/White-Pawn-Modern.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="pawnC" fitHeight="90.0" fitWidth="60.0" layoutX="220.0" layoutY="605.0">
+      <image>
+         <Image url="@../chessPiecesImages/White-Pawn-Modern.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="pawnD" fitHeight="90.0" fitWidth="60.0" layoutX="320.0" layoutY="605.0">
+      <image>
+         <Image url="@../chessPiecesImages/White-Pawn-Modern.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="pawnE" fitHeight="90.0" fitWidth="60.0" layoutX="420.0" layoutY="605.0">
+      <image>
+         <Image url="@../chessPiecesImages/White-Pawn-Modern.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="pawnF" fitHeight="90.0" fitWidth="60.0" layoutX="520.0" layoutY="605.0">
+      <image>
+         <Image url="@../chessPiecesImages/White-Pawn-Modern.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="whitePawnH" fitHeight="90.0" fitWidth="60.0" layoutX="720.0" layoutY="605.0" onMouseClicked="#mouseClickPawn" onMouseDragged="#onMouseDragReleased">
+      <image>
+         <Image url="@../chessPiecesImages/White-Pawn-Modern.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="90.0" fitWidth="60.0" layoutX="20.0" layoutY="105.0">
+      <image>
+         <Image url="@../chessPiecesImages/Black-Pawn-Modern.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="90.0" fitWidth="60.0" layoutX="720.0" layoutY="105.0">
+      <image>
+         <Image url="@../chessPiecesImages/Black-Pawn-Modern.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="90.0" fitWidth="60.0" layoutX="620.0" layoutY="105.0">
+      <image>
+         <Image url="@../chessPiecesImages/Black-Pawn-Modern.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="90.0" fitWidth="60.0" layoutX="520.0" layoutY="105.0">
+      <image>
+         <Image url="@../chessPiecesImages/Black-Pawn-Modern.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="90.0" fitWidth="60.0" layoutX="420.0" layoutY="105.0">
+      <image>
+         <Image url="@../chessPiecesImages/Black-Pawn-Modern.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="90.0" fitWidth="60.0" layoutX="320.0" layoutY="105.0">
+      <image>
+         <Image url="@../chessPiecesImages/Black-Pawn-Modern.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="90.0" fitWidth="60.0" layoutX="220.0" layoutY="105.0">
+      <image>
+         <Image url="@../chessPiecesImages/Black-Pawn-Modern.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="90.0" fitWidth="60.0" layoutX="120.0" layoutY="105.0">
+      <image>
+         <Image url="@../chessPiecesImages/Black-Pawn-Modern.png" />
+      </image>
+   </ImageView>
 </AnchorPane>
