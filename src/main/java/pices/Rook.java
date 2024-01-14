@@ -29,26 +29,33 @@ public class Rook implements Piece {
     }
 
     //TODO: реалізувати метод виявлення можливих ходів для тури.
-    public List<Coordinate> getListOfPossibleMoves() throws ImpossibleMoveException{
+    public List<Coordinate> getListOfPossibleMoves() {
         List<Coordinate> possibleMoves = new ArrayList<>();
-        if (coordinate.getCoordinateX() == this.coordinate.getCoordinateX()) {
-            for (int i = 1; i <= 8; i++) {
-                if (coordinate.isOutOfBounds()) {
-                    possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY() + i, this.coordinate.getCoordinateX()));
-                }
-            }
-        } else {
-            throw new ImpossibleMoveException("Impossible move");
+
+        if (ColorType.isWhite(colorType)) {
+            possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY() - 3, this.coordinate.getCoordinateX()));
         }
-        if (coordinate.getCoordinateY() == this.coordinate.getCoordinateY()) {
-            for (int i = 1; i <= 8; i++) {
-                if (coordinate.isOutOfBounds()) {
-                    possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY() + i, this.coordinate.getCoordinateX()));
-                }
-            }
-        } else {
-            throw new ImpossibleMoveException("Impossible move");
-        }
+//        for (int i = 1; i <= 8; i++) {
+//                    possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY() + i, this.coordinate.getCoordinateX()));
+//            }
+//        for (int i = 1; i <= 8; i++) {
+//                    possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY() + i, this.coordinate.getCoordinateX()));
+//            }
+
+//        if (coordinate.getCoordinateX() == this.coordinate.getCoordinateX()) {
+//            for (int i = 1; i <= 8; i++) {
+//                    possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY() + i, this.coordinate.getCoordinateX()));
+//            }
+//        } else {
+//            throw new ImpossibleMoveException("Impossible move");
+//        }
+//        if (coordinate.getCoordinateY() == this.coordinate.getCoordinateY()) {
+//            for (int i = 1; i <= 8; i++) {
+//                    possibleMoves.add(Coordinate.getCoordinate(this.coordinate.getCoordinateY() + i, this.coordinate.getCoordinateX()));
+//            }
+//        } else {
+//            throw new ImpossibleMoveException("Impossible move");
+//        }
 
         return possibleMoves;
     }
